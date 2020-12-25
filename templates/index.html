@@ -1,0 +1,126 @@
+
+   <html>
+    <head>
+       <title>PHEONIX - OCR</title>
+       <link rel="stylesheet" media="screen" href="static/css/bootstrap.min.css">
+       <script src="static/js/jquery-3.2.1.slim.min.js"></script>
+       <script src="static/js/popper.min.js"></script>
+       <script src="static/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" media="screen" href ="static/css/style.css">
+       <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="static/img/ocr_icon.png" />
+    </head>
+    <body>
+
+    <header>
+        <nav class="navbar">
+         <a class="navbar-brand" href="#">
+           <img src="static/img/ocr_icon.png" width="20" height="20" class="d-inline-block align-top" alt="">
+           PHEONIX - OCR
+         </a>
+       </nav>
+    </header>
+
+    <main class="container">
+    <div class="row">
+     <div class="col-3">
+       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+         <a class="nav-link active" id="v-pills-vconvert-tab" data-toggle="pill" href="#v-pills-vconvert" role="tab" aria-controls="v-pills-vconvert" aria-selected="true">Video Converter</a>
+         <a class="nav-link" id="v-pills-ocrurl-tab" data-toggle="pill" href="#v-pills-ocrurl" role="tab" aria-controls="v-pills-ocrurl" aria-selected="false">OCR URL</a>
+         <a class="nav-link" id="v-pills-ocrimg-tab" data-toggle="pill" href="#v-pills-ocrimg" role="tab" aria-controls="v-pills-ocrimg" aria-selected="false">OCR Image</a>
+         <a class="nav-link" id="v-pills-ocrzip-tab" data-toggle="pill" href="#v-pills-ocrzip" role="tab" aria-controls="v-pills-ocrzip" aria-selected="false">OCR ZIP</a>
+       </div>
+     </div>
+     <div class="col-9">
+       <div class="tab-content" id="v-pills-tabContent">
+         <div class="tab-pane fade show active" id="v-pills-vconvert" role="tabpanel" aria-labelledby="v-pills-vconvert-tab">
+
+             <form action="/videoConverter" method="POST" enctype="multipart/form-data">
+              <div class="form-group row">
+                <label for="url" class="col-sm-2 col-form-label">URL</label>
+                <div class="col-sm-10">
+                  <input type="url" class="form-control" id="url" name="url" placeholder="URL">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="file" class="col-sm-2 col-form-label">File</label>
+                <div class="col-sm-10">
+                  <input type="file" class="form-control" id="file" name="file" placeholder="Choose Video File">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="output_type" class="col-sm-2 col-form-label">Output Type</label>
+                <div class="col-sm-10">
+                  <select class="custom-select mr-sm-2" id="output_type" name="output_type">
+                     <option value="mp4">MP4</option>
+                     <option value="webm">Webm</option>
+                     <option value="mkv">MKV</option>
+                     <option value="avi">Avi</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-auto my-1">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+             </form>
+
+         </div>
+         <div class="tab-pane fade" id="v-pills-ocrurl" role="tabpanel" aria-labelledby="v-pills-ocrurl-tab">
+            <form class="form-inline" action="/urlUploader" method="POST">
+               <div class="form-group row">
+                <label for="url" class="col-sm-2 col-form-label">URL</label>
+                <div class="col-sm-10">
+                  <input type="url" class="form-control" id="url" name="url" placeholder="URL">
+                </div>
+              </div>
+              <div class="col-auto my-1">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+         </div>
+         <div class="tab-pane fade" id="v-pills-ocrimg" role="tabpanel" aria-labelledby="v-pills-ocrimg-tab">
+            <form class="form-inline" action = "/uploader" method = "POST" enctype = "multipart/form-data">
+               <div class="form-group row">
+                <label for="file" class="col-sm-2 col-form-label">File</label>
+                <div class="col-sm-10">
+                  <input type="file" class="form-control" id="file" name="file" placeholder="Choose Video File">
+                </div>
+               </div>
+               <div class="col-auto my-1">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+               </div>
+            </form>
+         </div>
+         <div class="tab-pane fade" id="v-pills-ocrzip" role="tabpanel" aria-labelledby="v-pills-ocrzip-tab">
+            <form class="form-inline" action = "/zipuploader" method = "POST" enctype = "multipart/form-data">
+               <div class="form-group row">
+                <label for="file" class="col-sm-2 col-form-label">File</label>
+                <div class="col-sm-10">
+                  <input type="file" class="form-control" id="file" name="file" placeholder="Choose Video File">
+                </div>
+               </div>
+               <div class="col-auto my-1">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+               </div>
+            </form>
+         </div>
+       </div>
+     </div>
+    </div>
+    </main>
+
+    <footer>
+    <div class="col-auto text-center">
+        Team Pheonix @2019
+    </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="static/js/main.js"></script>
+   </body>
+   </html>

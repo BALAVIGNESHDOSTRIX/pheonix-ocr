@@ -1,0 +1,14 @@
+body {
+    background-color: #64B5F6;
+    color:white;
+    font-size:initial;
+}
+
+.container {
+    background-color: #42A5F5;
+    padding: 1em;
+}
+
+.navbar {
+    background-color: black;
+}
